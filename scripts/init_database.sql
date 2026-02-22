@@ -1,3 +1,5 @@
+** The purpose of the scripti is to create the schema and database for the data warehousing project **
+
 use master;
 -- created database for our data warehousing project 
 create database datawh_2026;
