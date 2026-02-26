@@ -53,3 +53,56 @@ CID varchar(20),
 BDATE varchar(20),
 GEN varchar(20)
 )
+------------------------------------------------------------------------------------------------------------------------------
+-- bulk inserting the data from local csv to sql server 
+BULK INSERT BRONZE.CRM_CUST_DETAILS
+FROM 'C:\Users\Shatakshi Singh\Downloads\cust_info.csv'
+WITH 
+(FIRSTROW=2,-- to eliminate the first which is header
+FIELDTERMINATOR=',',-- for delimeter type
+TABLOCK -- this will lock the table while the insert is happening
+)
+
+
+BULK INSERT BRONZE.crm_sales_details
+FROM 'C:\Users\Shatakshi Singh\Downloads\sales_details.csv'
+WITH 
+(FIRSTROW=2,-- to eliminate the first which is header
+FIELDTERMINATOR=',',-- for delimeter type
+TABLOCK -- this will lock the table while the insert is happening
+)
+
+BULK INSERT BRONZE.CRM_prd_details
+FROM 'C:\Users\Shatakshi Singh\Downloads\prd_info.csv'
+WITH 
+(FIRSTROW=2,-- to eliminate the first which is header
+FIELDTERMINATOR=',',-- for delimeter type
+TABLOCK -- this will lock the table while the insert is happening
+)
+
+BULK INSERT BRONZE.ERP_PX_CAT_G1V2
+FROM 'C:\Users\Shatakshi Singh\Downloads\PX_CAT_G1V2.csv'
+WITH 
+(FIRSTROW=2,-- to eliminate the first which is header
+FIELDTERMINATOR=',',-- for delimeter type
+TABLOCK -- this will lock the table while the insert is happening
+)
+
+BULK INSERT BRONZE.ERP_LOC_A101
+FROM 'C:\Users\Shatakshi Singh\Downloads\LOC_A101.csv'
+WITH 
+(FIRSTROW=2,-- to eliminate the first which is header
+FIELDTERMINATOR=',',-- for delimeter type
+TABLOCK -- this will lock the table while the insert is happening
+)
+
+BULK INSERT BRONZE.ERP_CUST_AZ12
+FROM 'C:\Users\Shatakshi Singh\Downloads\CUST_AZ12.csv'
+WITH 
+(FIRSTROW=2,-- to eliminate the first which is header
+FIELDTERMINATOR=',',-- for delimeter type
+TABLOCK -- this will lock the table while the insert is happening
+)
+
+-- bulk loading of all data done
+--------------------------------------------------------------------------------------------------------------------------------------
